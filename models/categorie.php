@@ -78,7 +78,7 @@
 
                              <div class="card-body pt-2">
                                  <span class="text-gradient text-primary   font-weight-bold  h3"><?= htmlentities($categorie2[3]); ?></span>
-                                 <a href="javascript:;" class="card-title h5 d-block text-darker ">
+                                 <a href="author.php?id_annonce=<?php echo htmlentities($categorie2[0]); ?>" class="card-title h5 d-block text-darker ">
                                      <?= htmlentities($categorie2[2]); ?>
                                  </a>
                                  <p class="card-description mb-4 text-info text-gradient">

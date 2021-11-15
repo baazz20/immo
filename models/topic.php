@@ -1,9 +1,8 @@
 <?php require_once 'controllers/database.php';
-  $topicid = (int) trim(htmlentities($_GET['topicid']));
-  $userid = (int) trim(htmlentities($_GET['userid']));
- $requete = $bdd->query("SELECT *, utilisateur.id, utilisateur.nom_prenom, utilisateur.avatar FROM topic INNER JOIN utilisateur ON topic.id = $userid WHERE topic.id_user = $userid ORDER BY date_creation DESC");
+  $id_annonce = (int) trim(htmlentities($_GET['id_annonce']));
+ $requete = $bdd->query("SELECT * FROM iannonce  WHERE id = $id_annonce");
  $tmp = 1;
-?><?php  while ($topic = $requete->fetch(PDO::FETCH_NUM)) {?>
+?><?php  //while ($topic = $requete->fetch(PDO::FETCH_NUM)) {?>
  <section class="py-sm-7 py-5 position-relative">
     <div class="container">
       <div class="row">
@@ -14,9 +13,9 @@
             </div>
             <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <h4 class="mb-0"><?php echo htmlentities($topic[7]); ?></h4>
+                <h4 class="mb-0"><?php //echo htmlentities($topic[1]); ?></h4>
                 <div class="d-block">
-                  <button type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0">Follow</button>
+                  <button type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0">Acheter</button>
                 </div>
               </div>
               <div class="row mb-4">
@@ -50,4 +49,4 @@
   </section>
   <!-- END Testimonials w/ user image & text & info -->
   <!-- START Blogs w/ 4 cards w/ image & text & link -->
- <?php  $tmp++; } ?>
+ <?php // $tmp++; } ?>
