@@ -30,7 +30,7 @@
                      </div>
                  </div>
              </div>
-             <?php $requete2 = $bdd->query('SELECT * FROM annonce ORDER BY date_creation');
+             <?php $requete2 = $bdd->query('SELECT * FROM annonce INNER JOIN annonceur ON annonce. id_annonceur = annonceur.id ORDER BY annonce.date_creation');
                 $tmp2 = 1;
                 while ($categorie2 = $requete2->fetch(PDO::FETCH_NUM)) { ?>
                  <div class="col-lg-3 col-sm-6 ">
@@ -77,18 +77,18 @@
                              </div>
 
                              <div class="card-body pt-2">
-                                 <span class="text-gradient text-primary   font-weight-bold  h3"><?= htmlentities($categorie2[3]); ?></span>
-                                 <a href="author.php?id_annonce=<?php echo htmlentities($categorie2[0]); ?>" class="card-title h5 d-block text-darker ">
-                                     <?= htmlentities($categorie2[2]); ?>
+                                 <span class="text-gradient text-primary   font-weight-bold  h3"><?= htmlentities($categorie2[4]); ?></span>
+                                 <a href="author.php?id_annonce=<?php echo htmlentities($categorie2[0]); ?>&&id_annonceur=<?php echo htmlentities($categorie2[9]); ?>" class="card-title h5 d-block text-darker ">
+                                     <?= htmlentities($categorie2[3]); ?>
                                  </a>
                                  <p class="card-description mb-4 text-info text-gradient">
-                                     <?= htmlentities($categorie2[5]); ?></p>
+                                     <?= htmlentities($categorie2[6]); ?></p>
                                  <div class="author align-items-center">
-                                     <img src="./assets/img/kit/pro/team-2.jpg" alt="..." class="avatar shadow">
+                                     <img src="assets/uploads/<?= htmlentities($categorie2[15]); ?>" alt="..." class="avatar shadow">
                                      <div class="name ps-3">
-                                         <span>Mathew Glock</span>
+                                         <span><?= htmlentities($categorie2[11]); ?></span>
                                          <div class="stats">
-                                             <small>publiée le <?php $date = $date = date_create($categorie2[7]);  echo date_format($date, 'd-m-Y à H:i:s'); ?></small>
+                                             <small>publiée le <?php $date = $date = date_create($categorie2[8]);  echo date_format($date, 'd-m-Y à H:i:s'); ?></small>
                                          </div>
                                      </div>
                                  </div>

@@ -32,14 +32,14 @@ if (isset($_POST['validate'])) {
         $user_password = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
         $dateCreationDeCompte = date('Y-m-d H:i:s');
 
-        //Vérifier si l'utilisateur existe déjà sur le site
-        $estCeQueLePseudoExist = $bdd->prepare('SELECT pseudo FROM utilisateur WHERE pseudo = ?');
+        //Vérifier si l'annonceur existe déjà sur le site
+        $estCeQueLePseudoExist = $bdd->prepare('SELECT pseudo FROM annonceur WHERE pseudo = ?');
         $estCeQueLePseudoExist->execute(array($user_pseudo));
 
         if ($estCeQueLePseudoExist->rowCount() == 0) {
 
-            //Insérer l'utilisateur dans la bdd
-            $insertUserOnWebsite = $bdd->prepare('INSERT INTO utilisateur(
+            //Insérer l'annonceur dans la bdd
+            $insertUserOnWebsite = $bdd->prepare('INSERT INTO annonceur(
                 pseudo,
                 nom_prenom,
                 mail,
@@ -54,13 +54,13 @@ if (isset($_POST['validate'])) {
                 $dateCreationDeCompte,
                 $avatar));
 
-            //Récupérer les informations de l'utilisateur
-            $recuperInfoUtilisateur = $bdd->prepare('SELECT id, pseudo, nom_prenom, mail, date_creation_compte, avatar FROM utilisateur WHERE pseudo = ? AND nom_prenom = ? AND mail = ?');
-            $recuperInfoUtilisateur->execute(array($user_pseudo, $user_nomPrenom, $user_email));
+            //Récupérer les informations de l'annonceur
+            $recuperInfoannonceur = $bdd->prepare('SELECT id, pseudo, nom_prenom, mail, date_creation_compte, avatar FROM annonceur WHERE pseudo = ? AND nom_prenom = ? AND mail = ?');
+            $recuperInfoannonceur->execute(array($user_pseudo, $user_nomPrenom, $user_email));
 
-            $usersInfos = $recuperInfoUtilisateur->fetch();
+            $usersInfos = $recuperInfoannonceur->fetch();
 
-            //Authentifier l'utilisateur sur le site et récupérer ses données dans des variables globales sessions
+            //Authentifier l'annonceur sur le site et récupérer ses données dans des variables globales sessions
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $usersInfos['id'];
             $_SESSION['pseudo'] = $usersInfos['pseudo'];
@@ -72,11 +72,11 @@ if (isset($_POST['validate'])) {
 
 
 
-            //Rediriger l'utilisateur vers la page d'accueil
+            //Rediriger l'annonceur vers la page d'accueil
             header('Location: index.php');
 
         } else {
-            $errorMsg = "L'utilisateur existe déjà sur le site";
+            $errorMsg = "L'annonceur existe déjà sur le site";
         }
 
     } else {

@@ -13,7 +13,7 @@ if(isset($_POST['validate'])){
         $user_password = htmlspecialchars($_POST['password']);
 
         //Vérifier si l'utilisateur existe (si le pseudo est correct)
-        $checkIfUserExists = $bdd->prepare('SELECT * FROM utilisateur WHERE pseudo = ?');
+        $checkIfUserExists = $bdd->prepare('SELECT * FROM annonceur WHERE pseudo = ?');
         $checkIfUserExists->execute(array($user_pseudo));
 
         if($checkIfUserExists->rowCount() > 0){
