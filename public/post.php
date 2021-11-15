@@ -51,9 +51,8 @@
 					<!--      Wizard container        -->
 					<div class="wizard-container">
 						<div class="card wizard-card" data-color="blue" id="wizard">
-							<form action="" method="">
+							<form action="../controllers/PostController" method="POST" enctype="multipart/form-data">
 								<!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
-
 								<div class="wizard-header">
 									<h3 class="wizard-title">
 										Poste une annonce
@@ -206,7 +205,7 @@
 											<div class="col-sm-12 col-sm-offset-0">
 												<div class="col-sm-4" style="max-width: 20%; ">
 													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une maison.">
-														<input type="radio" name="type" value="House">
+														<input type="radio" name="type" value="3">
 														<div class="icon">
 															<i class="material-icons">house</i>
 														</div>
@@ -215,16 +214,16 @@
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
 													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Appartment.">
-														<input type="radio" name="type" value="Appartment">
+														<input type="radio" name="type" value="1">
 														<div class="icon">
 															<i class="material-icons">apartment</i>
 														</div>
-														<h6>Appartment</h6>
+														<h6>Appartement</h6>
 													</div>
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
 													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Studio.">
-														<input type="radio" name="type" value="Appartment">
+														<input type="radio" name="type" value="4">
 														<div class="icon">
 															<i class="material-icons">bedroom_child</i>
 														</div>
@@ -233,7 +232,7 @@
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
 													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une villa.">
-														<input type="radio" name="type" value="Appartment">
+														<input type="radio" name="type" value="2">
 														<div class="icon">
 															<i class="material-icons">villa</i>
 														</div>
@@ -242,7 +241,7 @@
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
 													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Bureaux.">
-														<input type="radio" name="type" value="Appartment">
+														<input type="radio" name="type" value="6">
 														<div class="icon">
 															<i class="material-icons">maps_home_work</i>
 														</div>
@@ -259,7 +258,7 @@
 												<div class="picture-container">
 													<div class="picture">
 														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview" title="">
-														<input type="file" id="wizard-picture">
+														<input type="file" id="wizard-picture" name="photo1">
 													</div>
 													<h6>Image Extérieur</h6>
 												</div>
@@ -267,8 +266,8 @@
 											<div class="col-sm-4 col-sm-offset-1" style="max-width: 20%;">
 												<div class="picture-container">
 													<div class="picture">
-														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview" title="">
-														<input type="file" id="wizard-picture">
+														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview1" title="">
+														<input type="file" id="wizard-picture1" name="photo2">
 													</div>
 													<h6>Image du Salon</h6>
 												</div>
@@ -276,8 +275,8 @@
 											<div class="col-sm-4 col-sm-offset-1" style="max-width: 20%;">
 												<div class="picture-container">
 													<div class="picture">
-														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview" title="">
-														<input type="file" id="wizard-picture">
+														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview2" title="">
+														<input type="file" id="wizard-picture2" name="photo3">
 													</div>
 													<h6>Image d'une Chambre ou autre piece sinon</h6>
 												</div>
@@ -305,7 +304,7 @@
 								<div class="wizard-footer">
 									<div class="pull-right">
 										<input type='button' class='btn btn-next btn-fill btn-info btn-wd' name='next' value='Suivant' />
-										<input type='button' class='btn btn-finish btn-fill btn-info btn-wd' name='finish' value='Terminer' />
+										<input type='submit' class='btn btn-finish btn-fill btn-info btn-wd' name='finish' value='Terminer' />
 									</div>
 									<div class="pull-left">
 										<input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Précédente' />
@@ -337,5 +336,6 @@
 
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="assets/js/jquery.validate.min.js"></script>
+
 
 </html>
