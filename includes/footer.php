@@ -3,16 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 me-auto mb-lg-0 mb-4 text-lg-start text-center">
-          <h6 class="text-white font-weight-bolder text-uppercase mb-lg-4 mb-3">Soft</h6>
+          <h6 class="text-white font-weight-bolder text-uppercase mb-lg-4 mb-3">ImmoPlus</h6>
           <ul class="nav flex-row ms-n3 justify-content-lg-start justify-content-center mb-4 mt-sm-0">
             <li class="nav-item">
               <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com" target="_blank">
-                Home
+                Accueil
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com/presentation" target="_blank">
-                About
+              À propos
               </a>
             </li>
             <li class="nav-item">
@@ -29,12 +29,12 @@
           <p class="text-sm text-white opacity-8 mb-0">
             Copyright © <script>
               document.write(new Date().getFullYear())
-            </script> Soft by Creative Tim.
+            </script> Par ImmoPlus.
           </p>
         </div>
         <div class="col-lg-6 ms-auto text-lg-end text-center">
           <p class="mb-5 text-lg text-white font-weight-bold">
-            The reward for getting on the stage is fame. The price of fame is you can’t get off the stage.
+            Un logement pour tous, un sourir pour la nation
           </p>
           <a href="javascript:;" target="_blank" class="text-white me-xl-4 me-4 opacity-5">
             <span class="fab fa-dribbble"></span>

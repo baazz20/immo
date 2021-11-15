@@ -35,8 +35,6 @@
                 while ($categorie2 = $requete2->fetch(PDO::FETCH_NUM)) { ?>
                  <div class="col-lg-3 col-sm-6 ">
                      <div class="card card-plain card-blog">
-
-
                          <div class="card">
                              <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                                  <div id="carouselExampleDark_<?= htmlentities($categorie2[0]); ?>" class="carousel carousel-dark slide" data-bs-ride="carousel">
