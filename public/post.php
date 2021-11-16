@@ -1,5 +1,7 @@
+<?php
+include_once '../controllers/securityAction.php'; ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 	<meta charset="utf-8" />
@@ -78,7 +80,7 @@
 												<div class="form-group label-floating">
 													<label class="control-label">Surface de l'emplacement</label>
 													<div class="input-group">
-														<input type="text" class="form-control">
+														<input type="text" class="form-control" name="surface">
 														<span class="input-group-addon">M²</span>
 													</div>
 												</div>
@@ -86,7 +88,7 @@
 											<div class="col-sm-5">
 												<div class="form-group label-floating">
 													<label class="control-label">Ville</label>
-													<select name="country" class="form-control">
+													<select class="form-control" name="ville">
 														<option disabled="" selected=""></option>
 														<option value="Abengourou">Abengourou</option>
 														<option value="Aboisso">Aboisso</option>
@@ -185,14 +187,14 @@
 											<div class="col-sm-5 col-sm-offset-1">
 												<div class="form-group label-floating">
 													<label class="control-label">Saisir le titre l'annonce</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="titre">
 												</div>
 											</div>
 											<div class="col-sm-5">
 												<div class="form-group label-floating">
 													<label class="control-label">Prix de location ou de vente</label>
 													<div class="input-group">
-														<input type="text" class="form-control">
+														<input type="text" class="form-control" name="prix">
 														<span class="input-group-addon">FCFA</span>
 													</div>
 												</div>
@@ -203,50 +205,71 @@
 										<h4 class="info-text">Quel type d'emplacement avez-vous ? </h4>
 										<div class="row">
 											<div class="col-sm-12 col-sm-offset-0">
-												<div class="col-sm-4" style="max-width: 20%; ">
-													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une maison.">
-														<input type="radio" name="type" value="3">
+
+												<div class="col-sm-4" style="max-width: 20%;">
+													<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="3"> Maison
+														<i class="material-icons">house</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une maison.">
+														<input type="radio" name="categorie" value="3" />
 														<div class="icon">
 															<i class="material-icons">house</i>
 														</div>
 														<h6>Maison</h6>
-													</div>
+													</div> -->
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
-													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Appartment.">
-														<input type="radio" name="type" value="1">
+												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="1"> Appartement
+														<i class="material-icons">apartment</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Appartment.">
+														<input type="radio" name="categorie" value="1" />
 														<div class="icon">
 															<i class="material-icons">apartment</i>
 														</div>
 														<h6>Appartement</h6>
-													</div>
+													</div> -->
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
-													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Studio.">
-														<input type="radio" name="type" value="4">
+												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="4"> Studio
+														<i class="material-icons">bedroom_child</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Studio.">
+														<input type="radio" name="categorie" value="4" />
 														<div class="icon">
 															<i class="material-icons">bedroom_child</i>
 														</div>
 														<h6>Studio</h6>
-													</div>
+													</div> -->
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
-													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une villa.">
-														<input type="radio" name="type" value="2">
+												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="2"> Villa
+														<i class="material-icons">villa</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une villa.">
+														<input type="radio" name="categorie" value="2" />
 														<div class="icon">
 															<i class="material-icons">villa</i>
 														</div>
 														<h6>villa</h6>
-													</div>
+													</div> -->
 												</div>
 												<div class="col-sm-4" style="max-width: 20%;">
-													<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Bureaux.">
-														<input type="radio" name="type" value="6">
+												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="6"> Bureaux
+														<i class="material-icons">maps_home_work</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Bureaux.">
+														<input type="radio" name="categorie" value="6" />
 														<div class="icon">
 															<i class="material-icons">maps_home_work</i>
 														</div>
 														<h6>Bureaux</h6>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -289,7 +312,7 @@
 											<div class="col-sm-6 col-sm-offset-1">
 												<div class="form-group label-floating">
 													<label class="control-label">Description du lieu</label>
-													<textarea class="form-control" placeholder="" rows="9"></textarea>
+													<textarea class="form-control" placeholder="" rows="9" name="description"></textarea>
 												</div>
 											</div>
 											<div class="col-sm-4">

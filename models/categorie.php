@@ -1,5 +1,5 @@
  <?php require_once 'controllers/database.php';
-    $requete = $bdd->query('SELECT * FROM immo_categorie ORDER BY ordre');
+    $requete = $bdd->query('SELECT * FROM immo_categorie');
     $tmp = 1;
     ?>
  <section class="py-3">
@@ -45,19 +45,19 @@
                                      </div>
                                      <div class="carousel-inner">
                                          <div class="carousel-item active" data-bs-interval="10000">
-                                             <img src="https://as2.ftcdn.net/v2/jpg/00/56/18/59/1000_F_56185988_ppLM4I3MJWiMFnrHJsVc5xqFyLnk5hJl.jpg" class="img-fluid border-radius-lg" alt="...">
+                                             <img src="../public/uploads/photoExt/<?= htmlentities($categorie2[9]); ?>" class="img-fluid border-radius-lg" alt="...">
                                              <div class="carousel-caption d-none d-md-block">
                                                  <h5>ImmoPlus</h5>
                                              </div>
                                          </div>
                                          <div class="carousel-item" data-bs-interval="2000">
-                                             <img src="https://as2.ftcdn.net/v2/jpg/00/52/37/45/1000_F_52374568_eZxGrk2q2STajHUjqMsJY8XKA7G0Wyo0.jpg" class="img-fluid border-radius-lg" alt="...">
+                                             <img src="../public/uploads/photoSalon/<?= htmlentities($categorie2[10]); ?>" class="img-fluid border-radius-lg" alt="...">
                                              <div class="carousel-caption d-none d-md-block">
                                                  <h5>ImmoPlus</h5>
                                              </div>
                                          </div>
                                          <div class="carousel-item">
-                                             <img src="https://as1.ftcdn.net/v2/jpg/02/34/17/10/1000_F_234171055_qrGmfWAdd4XyqLN0FGG2DADRDk8Gu9Oa.jpg" class="img-fluid border-radius-lg" alt="...">
+                                             <img src="../public/uploads/photoChambre/<?= htmlentities($categorie2[11]); ?>" class="img-fluid border-radius-lg" alt="...">
                                              <div class="carousel-caption d-none d-md-block">
                                                  <h5>ImmoPlus</h5>
                                              </div>
@@ -75,16 +75,16 @@
                              </div>
 
                              <div class="card-body pt-2">
-                                 <span class="text-gradient text-primary   font-weight-bold  h3"><?= htmlentities($categorie2[4]); ?></span>
-                                 <a href="author.php?id_annonce=<?php echo htmlentities($categorie2[0]); ?>&&id_annonceur=<?php echo htmlentities($categorie2[9]); ?>" class="card-title h5 d-block text-darker ">
+                                 <span class="text-gradient text-primary   font-weight-bold  h4"><?= htmlentities($categorie2[4]); ?></span>
+                                 <a href="author.php?id_annonce=<?php echo htmlentities($categorie2[0]); ?>&&id_annonceur=<?php echo htmlentities($categorie2[12]); ?>" class="card-title h5 d-block text-darker ">
                                      <?= htmlentities($categorie2[3]); ?>
                                  </a>
                                  <p class="card-description mb-4 text-info text-gradient">
                                      <?= htmlentities($categorie2[6]); ?></p>
                                  <div class="author align-items-center">
-                                     <img src="assets/uploads/<?= htmlentities($categorie2[15]); ?>" alt="..." class="avatar shadow">
+                                     <img src="assets/uploads/<?= htmlentities($categorie2[18]); ?>" alt="..." class="avatar shadow">
                                      <div class="name ps-3">
-                                         <span><?= htmlentities($categorie2[11]); ?></span>
+                                         <span><?= htmlentities($categorie2[14]); ?></span>
                                          <div class="stats">
                                              <small>publiée le <?php $date = $date = date_create($categorie2[8]);  echo date_format($date, 'd-m-Y à H:i:s'); ?></small>
                                          </div>

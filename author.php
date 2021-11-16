@@ -1,5 +1,3 @@
-<?php
-include_once 'controllers/securityAction.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" itemscope itemtype="http://schema.org/WebPage">
 

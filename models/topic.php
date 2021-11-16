@@ -20,19 +20,19 @@ $tmp = 1;
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                  <img src="https://image.freepik.com/photos-gratuite/interieur-chambre_1098-15128.jpg" class="img-fluid border-radius-lg" alt="...">
+                  <img src="../public/uploads/photoExt/<?= htmlentities($topic[9]); ?>" class="img-fluid border-radius-lg" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="h6 text-info icon-move-right">ImmoPlus</h5>
                   </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                  <img src="https://image.freepik.com/photos-gratuite/facade-immeuble-residentiel_158595-5085.jpg" class="img-fluid border-radius-lg" alt="...">
+                  <img src="../public/uploads/photoSalon/<?= htmlentities($topic[10]); ?>" class="img-fluid border-radius-lg" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="h6 text-info icon-move-right">ImmoPlus</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="https://image.freepik.com/photos-gratuite/belle-photo-cuisine-maison-moderne_181624-2943.jpg" class="img-fluid border-radius-lg" alt="...">
+                  <img src="../public/uploads/photoChambre/<?= htmlentities($topic[11]); ?>" class="img-fluid border-radius-lg" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="h6 text-info icon-move-right">ImmoPlus</h5>
                   </div>
@@ -59,7 +59,7 @@ $tmp = 1;
                 <span>M²</span>
               </div>
               <div class="col-auto">
-                <span class="h6 text-info icon-move-right"><i class="fas fa-house-user text-sm ms-1"></i> <?php echo htmlentities($topic[17]); ?></span>
+                <span class="h6 text-info icon-move-right"><i class="fas fa-house-user text-sm ms-1"></i> <?php echo htmlentities($topic[20]); ?></span>
               </div>
               <div class="col-auto">
                 <span class="h6 text-info icon-move-right"><i class="fas fa-map-marked text-sm ms-1"></i> <?php echo htmlentities($topic[6]); ?>, </span>
@@ -87,7 +87,7 @@ $tmp = 1;
             <div class="row">
               <div class="col-lg-2">
                 <div class="card-header px-4 py-sm-5 py-3">
-                <a href="mailto: <?php echo htmlentities($topic[12]); ?>" type="button" class="btn btn-info">Evoyer un email</a>
+                <a href="mailto: <?php echo htmlentities($topic[15]); ?>" type="button" class="btn btn-info">Evoyer un email</a>
                 </div>
               </div>
               <div class="col-lg-10 position-relative bg-cover px-0" style="background-image: url('assets/img/curved-images/curved5.jpg')">
@@ -112,7 +112,7 @@ $tmp = 1;
                         <i class="fas fa-envelope text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8"><?php echo htmlentities($topic[12]); ?></span>
+                        <span class="text-sm opacity-8"><?php echo htmlentities($topic[15]); ?></span>
                       </div>
                     </div>
                     <div class="d-flex p-2 text-white">
