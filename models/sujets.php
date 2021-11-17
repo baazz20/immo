@@ -8,7 +8,7 @@
     <div class="container border-bottom">
         <div class="row py-3">
             <div class="col-lg-4 text-start">
-                <p class="lead text-dark pt-1 mb-0">Liste des Questions</p>
+                <p class="lead text-dark pt-1 mb-0">Liste des annonce de la Categorie Sélctionner</p>
             </div>
         </div>
     </div>
@@ -20,18 +20,18 @@
 
                 <div class="card-body pt-2">
                     <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold my-2"><?php echo $tmp ?></span>
-                    <a href="author.php?topicid=<?php echo htmlentities($topic[0]); ?>&userid=<?php echo htmlentities($topic[6]); ?>" class="card-title h5 d-block text-darker">
-                    <?php echo htmlentities($topic[2]); ?>
+                    <a href="author.php?id_annonce=<?php echo htmlentities($topic[0]); ?>&&id_annonceur=<?php echo htmlentities($topic[2]); ?>" class="card-title h5 d-block text-darker">
+                    <?php echo htmlentities($topic[3]); ?>
                     </a>
                     <p class="card-description mb-4">
-                    <?php echo htmlentities($topic[3]); ?>
+                    <?php echo htmlentities($topic[4]); ?>
                     </p>
                     <div class="author align-items-center">
-                        <img src="assets/uploads/<?php // echo htmlentities($topic[12]);?>" alt="..." class="avatar shadow">
+                        <img src="../public/uploads/photoExt/<?php  echo htmlentities($topic[9]);?>" alt="..." class="avatar shadow">
                         <div class="name ps-3">
                             <span><?php echo htmlentities($topic[7]); ?></span>
                             <div class="stats">
-                                <small><?php echo htmlentities($topic[4]); ?></small>
+                                <small><?php echo htmlentities($topic[8]); ?></small>
                             </div>
                         </div>
                     </div>

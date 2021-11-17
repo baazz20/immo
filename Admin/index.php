@@ -1,5 +1,8 @@
-<?php 
-require_once 'backend/security.php';?><!DOCTYPE html>
+<?php
+include 'backend/database.php';
+require_once 'backend/security.php'; ?>
+
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -8,7 +11,7 @@ require_once 'backend/security.php';?><!DOCTYPE html>
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>
-       ImmoPlus | Administration
+        ImmoPlus | Administration
     </title>
     <script src="../config/security/deconnexion.js"></script>
 
@@ -36,31 +39,12 @@ require_once 'backend/security.php';?><!DOCTYPE html>
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
-                    <a class="nav-link  active" href="dashboard.php">
-                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>shop </title>
-                                <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Rounded-Icons" transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                        <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
-                                            <g id="shop-" transform="translate(0.000000, 148.000000)">
-                                                <path class="color-background" d="M46.7199583,10.7414583 L40.8449583,0.949791667 C40.4909749,0.360605034 39.8540131,0 39.1666667,0 L7.83333333,0 C7.1459869,0 6.50902508,0.360605034 6.15504167,0.949791667 L0.280041667,10.7414583 C0.0969176761,11.0460037 -1.23209662e-05,11.3946378 -1.23209662e-05,11.75 C-0.00758042603,16.0663731 3.48367543,19.5725301 7.80004167,19.5833333 L7.81570833,19.5833333 C9.75003686,19.5882688 11.6168794,18.8726691 13.0522917,17.5760417 C16.0171492,20.2556967 20.5292675,20.2556967 23.494125,17.5760417 C26.4604562,20.2616016 30.9794188,20.2616016 33.94575,17.5760417 C36.2421905,19.6477597 39.5441143,20.1708521 42.3684437,18.9103691 C45.1927731,17.649886 47.0084685,14.8428276 47.0000295,11.75 C47.0000295,11.3946378 46.9030823,11.0460037 46.7199583,10.7414583 Z" id="Path" opacity="0.598981585"></path>
-                                                <path class="color-background" d="M39.198,22.4912623 C37.3776246,22.4928106 35.5817531,22.0149171 33.951625,21.0951667 L33.92225,21.1107282 C31.1430221,22.6838032 27.9255001,22.9318916 24.9844167,21.7998837 C24.4750389,21.605469 23.9777983,21.3722567 23.4960833,21.1018359 L23.4745417,21.1129513 C20.6961809,22.6871153 17.4786145,22.9344611 14.5386667,21.7998837 C14.029926,21.6054643 13.533337,21.3722507 13.0522917,21.1018359 C11.4250962,22.0190609 9.63246555,22.4947009 7.81570833,22.4912623 C7.16510551,22.4842162 6.51607673,22.4173045 5.875,22.2911849 L5.875,44.7220845 C5.875,45.9498589 6.7517757,46.9451667 7.83333333,46.9451667 L19.5833333,46.9451667 L19.5833333,33.6066734 L27.4166667,33.6066734 L27.4166667,46.9451667 L39.1666667,46.9451667 C40.2482243,46.9451667 41.125,45.9498589 41.125,44.7220845 L41.125,22.2822926 C40.4887822,22.4116582 39.8442868,22.4815492 39.198,22.4912623 Z" id="Path"></path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <span class="nav-link-text ms-1">Tableau de bord</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="annonce.php">
+                    <a class="nav-link  active" href="index.php">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>Bureau</title>
+                                <title>annonce</title>
                                 <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="Rounded-Icons" transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
                                         <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
@@ -73,9 +57,10 @@ require_once 'backend/security.php';?><!DOCTYPE html>
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Annonces</span>
+                        <span class="nav-link-text ms-1">Annonce</span>
                     </a>
                 </li>
+
                 <a class="nav-link  " href="annonceurs.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -95,12 +80,19 @@ require_once 'backend/security.php';?><!DOCTYPE html>
                     <span class="nav-link-text ms-1">Annonceurs</span>
                 </a>
                 </li>
-
-
-
             </ul>
         </div>
-       
+        <div class="sidenav-footer mx-3 mt-3 pt-3">
+            <div class="card card-background shadow-none card-background-mask-info" id="sidenavCard">
+                <div class="full-background" style="background-image: url('assets/img/curved-images/white-curved.jpeg')"></div>
+                <div class="card-body text-left p-3 w-100">
+                    <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+                        <i class="ni ni-diamond text-gradient text-lg top-0 text-info" aria-hidden="true" id="sidenavCardIcon"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </aside>
     <main class="main-content mt-1 border-radius-lg">
         <!-- Navbar -->
@@ -110,78 +102,62 @@ require_once 'backend/security.php';?><!DOCTYPE html>
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="../index.php">IMMO PLUS</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">IMMO PLUS</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tableau de bord</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Tableau de bord</h6>
+                    <h6 class="font-weight-bolder mb-0">Annonces</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+                        <div class="input-group">
+                            <span class="input-group-text text-body"><i class="fas fa-home" aria-hidden="true"></i></span>
+                            <a href="../index.php" class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0">Accueil</a>'
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
                         <div class="input-group">
                             <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" placeholder="Rechercher ici...">
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </nav>
         <!-- End Navbar -->
+
         <div class="container-fluid py-4">
             <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">déjà votée</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            53,000
-                                            <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <h2>Gestion des <b>Annonces</b></h2>
                 </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="col-xl-3 col-sm-6"></div>
+                <div class="col-xl-3 col-sm-6">
                     <div class="card">
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">votes en cours</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Total d'annonceur</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            2,300
-                                            <span class="text-success text-sm font-weight-bolder">+3%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Bulletin null</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            +3,462
-                                            <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                            <?php
+                                            $ret = mysqli_query($conn, "select * from annonce");
+                                            $cnt = 0;
+                                            $row = mysqli_num_rows($ret);
+                                            if ($row > 0) {
+                                                while ($row = mysqli_fetch_array($ret)) {
+                                                    $cnt = $cnt + 1;
+                                                }
+                                            }  ?> <?= $cnt; ?>
+                                            <span class="text-success text-sm font-weight-bolder">annonce (s)</span>
                                         </h5>
                                     </div>
                                 </div>
@@ -194,39 +170,137 @@ require_once 'backend/security.php';?><!DOCTYPE html>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Votes total</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            103,430
-                                            <span class="text-success text-sm font-weight-bolder">+5%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+
+        </div>
+        <!-- table client -->
+        <div class="row ms-5 w-90">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h6>Liste des annonces</h6>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            TITRE</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+
+                                            SURFACE</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            PRIX</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $ret = mysqli_query($conn, "select * from annonce order by date_creation");
+                                    $cnt = 1;
+                                    $row = mysqli_num_rows($ret);
+                                    if ($row > 0) {
+                                        while ($row = mysqli_fetch_array($ret)) {
+
+                                    ?>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                        <div>
+                                                            <img src="../public/uploads/photoExt/<?php echo $row['photoExt']; ?>" class="avatar avatar-sm me-3">
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm"><?php echo $row['titre']; ?>
+                                                                <?php echo $row['ville']; ?></h6>
+                                                            <p class="text-xs text-secondary mb-0">
+                                                                <?php echo $row['date_creation']; ?>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                    <p class="text-xs text-secondary mb-0"><?php echo $row['suface']; ?> M²
+                                                    </p>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <span class="badge badge-sm bg-gradient-success"><?php echo $row['prix']; ?></span>
+                                                </td>
+                                                <td class="align-middle text-center">
+                                                    <span class="text-secondary text-xs font-weight-bold"></span>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <span href="../" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        <i class="fas fa-eye" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>&emsp;
+                                                    </span>
+                                                    <a href="backend/supprimerannonce.php?idF=<?php echo $row['id'] ?>" class="text-secondary font-weight-bold text-xs" onclick="return confirm('Voulez vous vraiment le suprimer ?');" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                            $cnt = $cnt + 1;
+                                        }
+                                    } else { ?>
+                                        <tr>
+                                            <th style="text-align:center; color:red;" colspan="6">Aucun Enregistrement
+                                                Trouvé</th>
+                                        </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-           
         </div>
     </main>
-  
+
     <!--   Core JS Files   -->
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
     <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="assets/js/plugins/chartjs.min.js"></script>
     <script src="assets/js/plugins/Chart.extension.js"></script>
+    <!--   Core JS Files   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+    <script src="assets/js/form.js"></script>
+
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <script type="text/javascript">
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="assets/js/soft-ui-dashboard.min.js?v=1.0.2"></script>
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 

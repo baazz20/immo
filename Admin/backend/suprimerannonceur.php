@@ -22,7 +22,7 @@
             $resultat2=$bdd->query($requete2);
             $tabCount=$resultat2->fetch();
             if(count($nbrStag2)==0){
-                $requete2="delete * from annonce where id=?";
+                $requete2="delete from annonce where id_annonceur=?";
                 $params2=array($idf);
                 $resultat2=$bdd->prepare($requete2);
                 $resultat2->execute($params2);

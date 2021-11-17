@@ -243,19 +243,19 @@ require_once 'admin/backend/database.php';?>
     <div class="container">
       <div class="row">
         <div class="col-md-6 m-auto">
-          <h4>Be the first to see the news</h4>
+          <h4>Soyez le premier à voir les nouvelles</h4>
           <p class="mb-4">
-            Your company may not be in the software business,
-            but eventually, a software company will be in your business.
+          Votre entreprise n'est peut-être pas dans le secteur de l'immobilier,
+             mais finalement, une société de l'immobilier sera dans votre entreprise.
           </p>
           <div class="row">
             <div class="col-8">
               <div class="input-group">
-                <input type="text" class="form-control mb-sm-0" placeholder="Email Here...">
+                <input type="text" class="form-control mb-sm-0" placeholder="Email ici...">
               </div>
             </div>
             <div class="col-4 ps-0">
-              <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">Subscribe</button>
+              <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">S'abonner</button>
             </div>
           </div>
         </div>

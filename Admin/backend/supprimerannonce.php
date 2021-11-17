@@ -13,7 +13,7 @@
                 $resultat=$bdd->prepare($requete);
                 $resultat->execute($params);
                 if (isset($_SESSION['admin'])) {
-                    header('location:../annonce.php');
+                    header('location:../index.php');
                 } else {
                     header('location:../../about-us.php');
                 }

@@ -81,7 +81,7 @@
                                             <label>Mode de passe</label>
                                             <div class="input-group">
                                                 <input type="password" class="form-control"
-                                                    placeholder="hello@baazz.com" name="mdp">
+                                                    placeholder="mot de passe" name="mdp">
                                             </div>
                                         </div>
                                     </div>

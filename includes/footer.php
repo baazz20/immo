@@ -6,22 +6,22 @@
           <h6 class="text-white font-weight-bolder text-uppercase mb-lg-4 mb-3">ImmoPlus</h6>
           <ul class="nav flex-row ms-n3 justify-content-lg-start justify-content-center mb-4 mt-sm-0">
             <li class="nav-item">
-              <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com" target="_blank">
+              <a class="nav-link text-white opacity-8" href="">
                 Accueil
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com/presentation" target="_blank">
+              <a class="nav-link text-white opacity-8" href="">
               À propos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com/blog" target="_blank">
+              <a class="nav-link text-white opacity-8" href="">
                 Blog
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white opacity-8" href="https://www.creative-tim.com" target="_blank">
+              <a class="nav-link text-white opacity-8" href="">
                 Services
               </a>
             </li>

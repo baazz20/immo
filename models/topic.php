@@ -59,7 +59,7 @@ $tmp = 1;
                 <span>M²</span>
               </div>
               <div class="col-auto">
-                <span class="h6 text-info icon-move-right"><i class="fas fa-house-user text-sm ms-1"></i> <?php echo htmlentities($topic[20]); ?></span>
+                <span class="h6 text-info icon-move-right"><i class="fas fa-house-user text-sm ms-1"></i> <?php echo htmlentities($topic[21]); ?></span>
               </div>
               <div class="col-auto">
                 <span class="h6 text-info icon-move-right"><i class="fas fa-map-marked text-sm ms-1"></i> <?php echo htmlentities($topic[6]); ?>, </span>
@@ -98,13 +98,13 @@ $tmp = 1;
                   <div class="mask bg-gradient-info opacity-9"></div>
                   <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
                     <h3 class="text-white">Coordonnées</h3>
-                    <p class="text-white opacity-8 mb-4">Appeler ou envoyer un email</p>
+                    <p class="text-white opacity-8 mb-4">Appeler l'agent <?php echo htmlentities($topic[14]); ?> avec les Coordonnées suivante</p>
                     <div class="d-flex p-2 text-white">
                       <div>
                         <i class="fas fa-phone text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8">(+225) 07 772 100 20</span>
+                        <span class="text-sm opacity-8">(+225) <?php echo htmlentities($topic[16]); ?></span>
                       </div>
                     </div>
                     <div class="d-flex p-2 text-white">
