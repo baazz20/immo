@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 16 nov. 2021 à 01:42
+-- Généré le : mer. 17 nov. 2021 à 18:03
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `annonce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `peudo` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `peudo`, `nom`, `password`) VALUES
+(1, 'admin', 'Admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -43,14 +65,15 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `photoChambre` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `annonce`
 --
 
 INSERT INTO `annonce` (`id`, `id_categorie`, `id_annonceur`, `titre`, `prix`, `suface`, `ville`, `description`, `date_creation`, `photoExt`, `photoSalon`, `photoChambre`) VALUES
-(7, 2, 5, 'Ventre de villa', '35 250 000 FCFA', 500, 'San-Pedro', 'Pres de la mère vous avez une vu sur le port et sur la ville de Sans Pedro, cette Villa est une maison haut standing, elle conviendra que se soir pour y habiter ou pour des vacance c\'est le meilleur choix', '2016-11-21 00:00:00', 'Ventre de villa_202111169768.jpg', 'Ventre de villa_202111169768.jpg', 'Ventre de villa_202111169768.jpg');
+(27, 2, 13, 'Location de Villa', '5 250 000 FCFA', 600, 'San-Pedro', '\"L\'endroit est vraiment sympa. Vous pouvez l\'utiliser tous les dimanches lorsque vous allez à la pêche. C\'est tellement génial.\"', '2021-11-17 17:28:36', 'Location de Villa_20211117644.jpg', 'Location de Villa_20211117644.jpg', 'Location de Villa_20211117644.jpg'),
+(28, 1, 15, 'Vente d\'Appartement', '5 250 000 FCFA', 500, 'Soubré', '\"L\'endroit est vraiment sympa. Vous pouvez l\'utiliser tous les dimanches lorsque vous allez à la pêche. C\'est tellement génial.', '2021-11-17 17:39:27', 'Vente d\'Appartement_2021111713839.jpg', 'Vente d\'Appartement_2021111713839.jpg', 'Vente d\'Appartement_2021111713839.jpg');
 
 -- --------------------------------------------------------
 
@@ -64,22 +87,20 @@ CREATE TABLE IF NOT EXISTS `annonceur` (
   `pseudo` varchar(50) DEFAULT NULL,
   `nom_prenom` varchar(50) DEFAULT NULL,
   `mail` varchar(191) DEFAULT NULL,
+  `tel` varchar(255) NOT NULL,
   `mdp` text,
   `date_creation_compte` datetime DEFAULT NULL,
   `avatar` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `annonceur`
 --
 
-INSERT INTO `annonceur` (`id`, `pseudo`, `nom_prenom`, `mail`, `mdp`, `date_creation_compte`, `avatar`) VALUES
-(1, 'BaazZ', 'Yao N\'goran', 'admin@h', '$2y$10$FwwQ7ZaScgghVGqyAWZtJeNxFpTrnm5JpCNzcxtgZMxGJfpRtSxkC', '2021-08-07 20:09:55', 'BaazZ_2021080758840.jpg'),
-(2, 'VaporMax', 'Momo', 'momocach@gmail.com', '$2y$10$mKEI/tOXYr7H8Qnk7WPbEOr2lDLf3RkgH4.NmP6LoexEcCe9mD9i2', '2021-08-07 20:23:25', 'VaporMax_2021080773626.png'),
-(3, 'Yaya', 'toure', 'yaya@gmail.com', '$2y$10$3AGTLBFXhW17TfdOX/9JnO7/ECAZSo47NOWRXVFlMbEi6sna0KiJq', '2021-08-07 21:37:36', 'Yaya_2021080792570.jpg'),
-(4, 'Yao', 'Eloge', 'root@k', '$2y$10$vdfHWVCKbNoaeA3p2ZEHGua.D7oiDs/y2GOgkJrh3q1zcEMVXjBnu', '2021-11-03 04:51:31', 'Yao_2021110363519.jpg'),
-(5, 'Yao1', 'Eloge', 'yaoeloge@gmail.com', '$2y$10$TYtfUrSzSbd8c5EJ.pF8IeEIQAjxWQp4/rcSyJlY53/19SFpojfdC', '2021-11-03 15:32:44', 'Yao1_2021110315004.jpg');
+INSERT INTO `annonceur` (`id`, `pseudo`, `nom_prenom`, `mail`, `tel`, `mdp`, `date_creation_compte`, `avatar`) VALUES
+(13, 'Yao', 'Eloge', 'yaoeloge@gmail.com', '0707076277', '$2y$10$uzNWTHzptBLfWv2W7KPN/.NVUrtvFmgoxm6.Q03OIfg9HBcXYf2nG', '2021-11-17 17:16:57', 'Yao_2021111742234.jpg'),
+(15, 'Gohi', 'Marlène', 'gohi@gmail.com', '0725635868', '$2y$10$onG/rj8ZH8/Va6/CVJ9eJ.FqVdbVTNFtZGu0pSRXHTKBQGxDcXmgC', '2021-11-17 17:38:16', 'Gohi_2021111788776.png');
 
 -- --------------------------------------------------------
 
@@ -123,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `immo_categorie` (
   `titre` varchar(50) NOT NULL,
   `date_creation` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `immo_categorie`
@@ -134,7 +155,8 @@ INSERT INTO `immo_categorie` (`id`, `titre`, `date_creation`) VALUES
 (2, 'Villa', '2021-08-02 23:59:36'),
 (3, 'Maison', '2021-08-03 01:13:49'),
 (4, 'Studio', '2021-08-09 01:13:49'),
-(6, 'Bureaux', '2021-08-02 23:59:36');
+(6, 'Bureaux', '2021-08-02 23:59:36'),
+(7, 'Duplex', '2021-11-17 03:25:00');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
