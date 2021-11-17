@@ -24,12 +24,26 @@ include_once '../controllers/securityAction.php'; ?>
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="assets/css/demo.css" rel="stylesheet" />
+	<!-- alternatively you can use the font awesome icon library if using with `fas` theme (or Bootstrap 4.x) by uncommenting below. -->
+	<!-- link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous" -->
+
+	<!-- the fileinput plugin styling CSS file -->
+	<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
+	<!-- if using RTL (Right-To-Left) orientation, load the RTL CSS file after fileinput.css by uncommenting below -->
+	<!-- link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/css/fileinput-rtl.min.css" media="all" rel="stylesheet" type="text/css" /-->
+
+	<!-- the fileinput plugin styling CSS file -->
+	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+	<!-- if using RTL (Right-To-Left) orientation, load the RTL CSS file after fileinput.css by uncommenting below -->
+	<!-- link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/css/fileinput-rtl.min.css" media="all" rel="stylesheet" type="text/css" /-->
 </head>
 
 <body>
 	<div class="image-container set-full-height" style="background-image: url('assets/img/wizard-city.jpg')">
 		<!--   Creative Tim Branding   -->
-		<a href="http://creative-tim.com">
+		<a href="../index.php">
 			<div class="logo-container">
 				<div class="logo">
 					<img src="assets/img/new_logo.png">
@@ -204,14 +218,13 @@ include_once '../controllers/securityAction.php'; ?>
 									<div class="tab-pane" id="type">
 										<h4 class="info-text">Quel type d'emplacement avez-vous ? </h4>
 										<div class="row">
-											<div class="col-sm-12 col-sm-offset-0">
+											<div class="col-sm-10 col-sm-offset-1">
 
-												<div class="col-sm-4" style="max-width: 20%;">
-													<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30  form-check-label">
 														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="3"> Maison
-														<i class="material-icons">house</i>
 													</label>
-													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une maison.">
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip">
 														<input type="radio" name="categorie" value="3" />
 														<div class="icon">
 															<i class="material-icons">house</i>
@@ -219,10 +232,9 @@ include_once '../controllers/securityAction.php'; ?>
 														<h6>Maison</h6>
 													</div> -->
 												</div>
-												<div class="col-sm-4" style="max-width: 20%;">
-												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30 form-check-label">
 														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="1"> Appartement
-														<i class="material-icons">apartment</i>
 													</label>
 													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Appartment.">
 														<input type="radio" name="categorie" value="1" />
@@ -232,10 +244,9 @@ include_once '../controllers/securityAction.php'; ?>
 														<h6>Appartement</h6>
 													</div> -->
 												</div>
-												<div class="col-sm-4" style="max-width: 20%;">
-												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30 form-check-label">
 														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="4"> Studio
-														<i class="material-icons">bedroom_child</i>
 													</label>
 													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Studio.">
 														<input type="radio" name="categorie" value="4" />
@@ -245,10 +256,9 @@ include_once '../controllers/securityAction.php'; ?>
 														<h6>Studio</h6>
 													</div> -->
 												</div>
-												<div class="col-sm-4" style="max-width: 20%;">
-												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30 form-check-label">
 														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="2"> Villa
-														<i class="material-icons">villa</i>
 													</label>
 													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez une villa.">
 														<input type="radio" name="categorie" value="2" />
@@ -258,10 +268,21 @@ include_once '../controllers/securityAction.php'; ?>
 														<h6>villa</h6>
 													</div> -->
 												</div>
-												<div class="col-sm-4" style="max-width: 20%;">
-												<label class="btn btn-cyan btn-rounded form-check-label" title="Sélectionnez cette option si vous avez une maison.">
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30 form-check-label">
 														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="6"> Bureaux
-														<i class="material-icons">maps_home_work</i>
+													</label>
+													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Bureaux.">
+														<input type="radio" name="categorie" value="6" />
+														<div class="icon">
+															<i class="material-icons">maps_home_work</i>
+														</div>
+														<h6>Bureaux</h6>
+													</div> -->
+												</div>
+												<div class="col-sm-4">
+													<label class="btn btn-outline-info btn-lg w-30 form-check-label">
+														<input class="form-check-input" type="radio" autocomplete="off" name="categorie" value="7"> Duplex
 													</label>
 													<!-- <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Sélectionnez cette option si vous avez un Bureaux.">
 														<input type="radio" name="categorie" value="6" />
@@ -277,32 +298,41 @@ include_once '../controllers/securityAction.php'; ?>
 									<div class="tab-pane" id="facilities">
 										<h4 class="info-text">Ajouter des photos pour gagner en visibilité. </h4>
 										<div class="row">
-											<div class="col-sm-4 col-sm-offset-1" style="max-width: 20%;">
-												<div class="picture-container">
-													<div class="picture">
-														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview" title="">
-														<input type="file" id="wizard-picture" name="photo1">
-													</div>
-													<h6>Image Extérieur</h6>
+											<div class="col-sm-2 col-sm-offset-0">
+												<!--begin::Input group-->
+												<div class="fv-row">
+													<div class="input-group input-group-outline my-3">
+															<label class="form-label btn btn-info">Photo Exterieur
+															<input type="file" class="form-control" name="photo1" onchange="previewPicture(this)" required>
+															</label>
+														</div>
+													<img src="#" alt="" id="image" style="max-width: 200px;">
 												</div>
+												<!--end::Input group-->
 											</div>
-											<div class="col-sm-4 col-sm-offset-1" style="max-width: 20%;">
-												<div class="picture-container">
-													<div class="picture">
-														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview1" title="">
-														<input type="file" id="wizard-picture1" name="photo2">
+											<div class="col-sm-1 col-sm-offset-2">
+												<!--begin::Input group-->
+													<div class="fv-row">
+														<div class="input-group input-group-outline my-3">
+															<label class="form-label btn btn-info">Photo Salon
+															<input type="file" class="form-control" name="photo2" onchange="previewPicture1(this)" required>
+															</label>
+														</div>
+														<img src="#" alt="" id="image1" style="max-width: 200px;">
 													</div>
-													<h6>Image du Salon</h6>
-												</div>
+												<!--end::Input group-->
 											</div>
-											<div class="col-sm-4 col-sm-offset-1" style="max-width: 20%;">
-												<div class="picture-container">
-													<div class="picture">
-														<img src="assets/img/avatar1.png" class="picture-src" id="wizardPicturePreview2" title="">
-														<input type="file" id="wizard-picture2" name="photo3">
+											<div class="col-sm-2 col-sm-offset-3">
+												<!--begin::Input group-->
+													<div class="fv-row">
+														<div class="input-group input-group-outline my-3">
+															<label class="form-label btn btn-info">Photo Chambre
+															<input type="file" class="form-control" name="photo3" onchange="previewPicture2(this)" required>
+															</label>
+														</div>
+														<img src="#" alt="" id="image2" style="max-width: 200px;">
 													</div>
-													<h6>Image d'une Chambre ou autre piece sinon</h6>
-												</div>
+												<!--end::Input group-->
 											</div>
 										</div>
 									</div>
@@ -349,6 +379,113 @@ include_once '../controllers/securityAction.php'; ?>
 	</div>
 
 </body>
+<script type="text/javascript">
+	// L'image img#image
+	var image = document.getElementById("image");
+	var image1 = document.getElementById("image1");
+	var image2 = document.getElementById("image2");
+
+	// La fonction previewPicture
+	var previewPicture = function(e) {
+
+		// e.files contient un objet FileList
+		const [photo1] = e.files
+
+		// "photo1" est un objet File
+		if (photo1) {
+			// On change l'URL de l'image
+			image.src = URL.createObjectURL(photo1)
+		}
+	}
+	var previewPicture1 = function(e) {
+
+		// e.files contient un objet FileList
+		const [photo2] = e.files
+
+		// "photo2" est un objet File
+		if (photo2) {
+			// On change l'URL de l'image
+			image1.src = URL.createObjectURL(photo2)
+		}
+	}
+	var previewPicture2 = function(e) {
+
+		// e.files contient un objet FileList
+		const [photo3] = e.files
+
+		// "photo3" est un objet File
+		if (photo3) {
+			// On change l'URL de l'image
+			image2.src = URL.createObjectURL(photo3)
+		}
+	}
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<!-- piexif.min.js is needed for auto orienting image files OR when restoring exif data in resized images and when you
+    wish to resize images before upload. This must be loaded before fileinput.min.js -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/plugins/piexif.min.js" type="text/javascript"></script>
+
+<!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview. 
+    This must be loaded before fileinput.min.js -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/plugins/sortable.min.js" type="text/javascript"></script>
+
+<!-- bootstrap.bundle.min.js below is needed if you wish to zoom and preview file content in a detail modal
+    dialog. bootstrap 5.x or 4.x is supported. You can also use the bootstrap js 3.3.x versions. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<!-- the main fileinput plugin script JS file -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/fileinput.min.js"></script>
+
+<!-- following theme script is needed to use the Font Awesome 5.x theme (`fas`). Uncomment if needed. -->
+<!-- script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/themes/fas/theme.min.js"></script -->
+
+<!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/locales/LANG.js"></script>
+<script>
+	var myDropzone = new Dropzone("#kt_dropzonejs_example_1", {
+		url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
+		paramName: "file", // The name that will be used to transfer the file
+		maxFiles: 1,
+		maxFilesize: 500, // MB
+		addRemoveLinks: true,
+		accept: function(file, done) {
+			if (file.name == "wow.jpg") {
+				done("Naha, you don't.");
+			} else {
+				done();
+			}
+		}
+	});
+	var myDropzone = new Dropzone("#kt_dropzonejs_example_2", {
+		url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
+		paramName: "file", // The name that will be used to transfer the file
+		maxFiles: 1,
+		maxFilesize: 500, // MB
+		addRemoveLinks: true,
+		accept: function(file, done) {
+			if (file.name == "wow.jpg") {
+				done("Naha, you don't.");
+			} else {
+				done();
+			}
+		}
+	});
+	var myDropzone = new Dropzone("#kt_dropzonejs_example_3", {
+		url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
+		paramName: "file", // The name that will be used to transfer the file
+		maxFiles: 1,
+		maxFilesize: 500, // MB
+		addRemoveLinks: true,
+		accept: function(file, done) {
+			if (file.name == "wow.jpg") {
+				done("Naha, you don't.");
+			} else {
+				done();
+			}
+		}
+	});
+</script>
 <!--   Core JS Files   -->
 <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>

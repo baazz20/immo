@@ -78,7 +78,7 @@ if (isset($_POST['finish'])) {
     $prix = $_POST['prix'];
     $categorie = $_POST['categorie'];
     $description = $_POST['description'];
-    $question_date = date('d/m/y');
+    $question_date = date('Y-m-d H:i:s');
     $id_annonceur = $_SESSION['id'];
     
     $insertAnnonceOnWebsite = $bdd->prepare('INSERT INTO annonce(suface, ville, titre, prix, id_categorie, description, date_creation, id_annonceur, photoExt, photoSalon, photoChambre)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');

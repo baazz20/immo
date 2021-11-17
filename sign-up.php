@@ -93,13 +93,10 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 ps-md-2">
-                                            <label>Avatar</label>
+                                            <label>Telephone</label>
                                             <div class="input-group">
-                                                <a href="javascript:;" class="avatar avatar-lg rounded-circle"
-                                                    data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                    title="Ryan Tompson">
-                                                    <img alt="Image placeholder" src="assets/img/team-1.jpg">
-                                                </a>
+                                                <input type="tel" class="form-control"
+                                                    placeholder="+2250707070707" name="tel">
                                             </div>
                                         </div>
 

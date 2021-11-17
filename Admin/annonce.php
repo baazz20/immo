@@ -11,7 +11,7 @@ require_once 'backend/security.php'; ?>
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <title>
-        JI-2022 | Administration
+        ImmoPlus | Administration
     </title>
     <script src="../config/security/deconnexion.js"></script>
 
@@ -31,7 +31,7 @@ require_once 'backend/security.php'; ?>
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-left ms-3 bg-white" id="sidenav-main" data-color="info">
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="dashboard.php">
+            <a class="navbar-brand m-0" href="index.php">
                 <img src="assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
                 <span class="ms-1 font-weight-bold">ImmoPlus | Administration</span>
             </a>
@@ -62,8 +62,6 @@ require_once 'backend/security.php'; ?>
                 <li class="nav-item">
                     <a class="nav-link  active" href="annonce.php">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-
-
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>annonce</title>
                                 <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -126,7 +124,7 @@ require_once 'backend/security.php'; ?>
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">IMMO PLUS</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tableau de bord</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">GESTION DES ANNONCES</h6>
+                    <h6 class="font-weight-bolder mb-0">Annonces</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -140,9 +138,6 @@ require_once 'backend/security.php'; ?>
             </div>
         </nav>
         <!-- End Navbar -->
-
-
-
 
         <div class="container-fluid py-4">
             <div class="row">
@@ -208,7 +203,7 @@ require_once 'backend/security.php'; ?>
                                 <tbody>
 
                                     <?php
-                                    $ret = mysqli_query($conn, "select * from annonce");
+                                    $ret = mysqli_query($conn, "select * from annonce order by date_creation");
                                     $cnt = 1;
                                     $row = mysqli_num_rows($ret);
                                     if ($row > 0) {

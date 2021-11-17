@@ -29,6 +29,7 @@ if (isset($_POST['validate'])) {
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
         $user_nomPrenom = htmlspecialchars($_POST['nom_prenom']);
         $user_email = htmlspecialchars($_POST['email']);
+        $user_tel = htmlspecialchars($_POST['tel']);
         $user_password = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
         $dateCreationDeCompte = date('Y-m-d H:i:s');
 
@@ -43,19 +44,21 @@ if (isset($_POST['validate'])) {
                 pseudo,
                 nom_prenom,
                 mail,
+                tel,
                 mdp,
                 date_creation_compte,
-                avatar)VALUES(?, ?, ?, ?, ?, ?)');
+                avatar)VALUES(?, ?, ?, ?, ?, ?, ?)');
             $insertUserOnWebsite->execute(array(
                 $user_pseudo,
                 $user_nomPrenom,
                 $user_email,
+                $user_tel,
                 $user_password,
                 $dateCreationDeCompte,
                 $avatar));
 
             //Récupérer les informations de l'annonceur
-            $recuperInfoannonceur = $bdd->prepare('SELECT id, pseudo, nom_prenom, mail, date_creation_compte, avatar FROM annonceur WHERE pseudo = ? AND nom_prenom = ? AND mail = ?');
+            $recuperInfoannonceur = $bdd->prepare('SELECT id, pseudo, nom_prenom, mail, tel, date_creation_compte, avatar FROM annonceur WHERE pseudo = ? AND nom_prenom = ? AND mail = ?');
             $recuperInfoannonceur->execute(array($user_pseudo, $user_nomPrenom, $user_email));
 
             $usersInfos = $recuperInfoannonceur->fetch();
@@ -66,6 +69,7 @@ if (isset($_POST['validate'])) {
             $_SESSION['pseudo'] = $usersInfos['pseudo'];
             $_SESSION['nom_prenom'] = $usersInfos['nom_prenom'];
             $_SESSION['email'] = $usersInfos['mail'];
+            $_SESSION['tel'] = $usersInfos['tel'];
             $_SESSION['dateCreationCompte'] = $usersInfos['date_creation_compte'];
             $_SESSION['avatar'] = $usersInfos['avatar'];
             session_start();

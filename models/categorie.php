@@ -82,11 +82,11 @@
                                  <p class="card-description mb-4 text-info text-gradient">
                                      <?= htmlentities($categorie2[6]); ?></p>
                                  <div class="author align-items-center">
-                                     <img src="assets/uploads/<?= htmlentities($categorie2[18]); ?>" alt="..." class="avatar shadow">
+                                     <img src="assets/uploads/<?= htmlentities($categorie2[19]); ?>" alt="..." class="avatar shadow">
                                      <div class="name ps-3">
                                          <span><?= htmlentities($categorie2[14]); ?></span>
                                          <div class="stats">
-                                             <small>publiée le <?php $date = $date = date_create($categorie2[8]);  echo date_format($date, 'd-m-Y à H:i:s'); ?></small>
+                                             <small>publiée le <?php $date = date_create($categorie2[8]);  echo date_format($date, 'd/m/Y à H:i:s'); ?></small>
                                          </div>
                                      </div>
                                  </div>

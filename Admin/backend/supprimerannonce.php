@@ -4,17 +4,22 @@
 
             $idf=isset($_GET['idF'])?$_GET['idF']:0;
 
-            $requete="select * from candidat where id=$idf";
+            $requete="select * from annonce where id=$idf";
             $resultat=$bdd->query($requete);
             $tabCount=$resultat->fetch();
             if(count($nbrStag)==0){
-                $requete="delete from candidat where id=?";
+                $requete="delete from annonce where id=?";
                 $params=array($idf);
                 $resultat=$bdd->prepare($requete);
                 $resultat->execute($params);
-                header('location:../candidat.php');
+                if (isset($_SESSION['admin'])) {
+                    header('location:../annonce.php');
+                } else {
+                    header('location:../../about-us.php');
+                }
+                
             }else{
-                $msg="Suppression impossible: Vous devez supprimer tous les stagiaires inscris dans cette filière";
+                $msg="Suppression impossible";
                 header("location:alerte.php?message=$msg");
             }
     

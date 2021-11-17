@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
   <div class="container">
     <a class="navbar-brand" href="index.php" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
@@ -70,12 +69,20 @@
                 </div>
                 Compte
               </h6>
-              <a href="sign-in.php" class="dropdown-item border-radius-md">
-                <span class="ps-3">Se Connecter</span>
+              <?php
+              if (!isset($_SESSION['auth'])) {
+                echo '<a href="sign-in.php" class="dropdown-item border-radius-md">
+            <span class="ps-3">Se Connecter</span>
+          </a>';
+              } else {
+                echo '
+                <a href="about-us.php" class="dropdown-item border-radius-md">
+                <span class="ps-3">Profil</span>
               </a>
-              <a href="../controllers/logoutAction.php" class="dropdown-item border-radius-md">
-                <span class="ps-3">Se Deconnecter</span>
-              </a>
+                <a href="../controllers/logoutAction.php" class="dropdown-item border-radius-md">
+            <span class="ps-3">Se Deconnecter</span>
+          </a>';
+              }  ?>
             </div>
             <div class="d-lg-none">
               <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center px-0">
@@ -98,9 +105,7 @@
                 </div>
                 Infos
               </h6>
-              <a href="about-us.php" class="dropdown-item border-radius-md">
-                <span class="ps-3">A propos</span>
-              </a>
+              
               <a href="contact-us.php" class="dropdown-item border-radius-md">
                 <span class="ps-3">Nous Contacter</span>
               </a>
@@ -127,9 +132,20 @@
                 </div>
                 Compte
               </h6>
-              <a href="sign-in.php" class="dropdown-item border-radius-md">
+              <?php
+              if (!isset($_SESSION['auth'])) {
+                echo '<a href="sign-in.php" class="dropdown-item border-radius-md">
                 <span class="ps-3">Se Connecter</span>
+              </a>';
+              } else {
+                echo '
+                <a href="about-us.php" class="dropdown-item border-radius-md">
+                <span class="ps-3">Profil</span>
               </a>
+                <a href="../controllers/logoutAction.php" class="dropdown-item border-radius-md">
+            <span class="ps-3">Se Deconnecter</span>
+          </a>';
+              }  ?>
             </div>
           </div>
         </li>
@@ -145,6 +161,8 @@
     </div>
   </div>
 </nav>
+
+<!-- notification modal -->
 <div class="col-md-4">
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
@@ -163,10 +181,10 @@
           </div>
         </div>
         <div class="modal-footer">
-          <a  href="sign-in.php" type="button" class="btn btn-secondary">Ok, j'ai compris</a>
+          <a href="sign-in.php" type="button" class="btn btn-secondary">Ok, j'ai compris</a>
           <button type="button" class="btn btn-link ml-auto" data-bs-dismiss="modal">Fermer</button>
         </div>
-        
+
       </div>
     </div>
   </div>

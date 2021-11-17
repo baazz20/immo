@@ -28,7 +28,7 @@ require_once 'backend/security.php';?><!DOCTYPE html>
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-left ms-3 bg-white" id="sidenav-main" data-color="info">
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="dashboard.php">
+            <a class="navbar-brand m-0" href="index.php">
                 <img src="assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
                 <span class="ms-1 font-weight-bold">ImmoPlus | Administration</span>
             </a>
@@ -110,7 +110,7 @@ require_once 'backend/security.php';?><!DOCTYPE html>
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">MIAGE-GI</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="../index.php">IMMO PLUS</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tableau de bord</li>
                     </ol>
                     <h6 class="font-weight-bolder mb-0">Tableau de bord</h6>

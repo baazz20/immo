@@ -115,7 +115,7 @@ require_once 'backend/security.php'; ?>
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">IMMO PLUS</a></li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tableau de bord</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Tableau de bord</h6>
+                    <h6 class="font-weight-bolder mb-0">Annonceurs</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -232,7 +232,7 @@ require_once 'backend/security.php'; ?>
                                                     <a href="#" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                         <i class="fas fa-eye"></i>&emsp;
                                                     </a>
-                                                    <a href="backend/suprimercandidat.php?idF=<?php echo $row['id'] ?>" onclick="return confirm('Voulez vous vraiment le suprimer ?');" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                    <a href="backend/suprimerannonceur.php?idF=<?php echo $row['id'] ?>" onclick="return confirm('Voulez vous vraiment le suprimer ?');" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
