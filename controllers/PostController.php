@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 require('database.php');
@@ -98,6 +99,6 @@ if (isset($_POST['finish'])) {
 
                         $successMsg = "Votre Annonce a bien été publiée sur le site";
                         header('Location: ../public/post.php');
+                        ob_end_flush();
 
-
-} 
+} ?>

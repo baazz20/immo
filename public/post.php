@@ -67,7 +67,7 @@ include_once '../controllers/securityAction.php'; ?>
 					<!--      Wizard container        -->
 					<div class="wizard-container">
 						<div class="card wizard-card" data-color="blue" id="wizard">
-							<form action="../controllers/PostController" method="POST" enctype="multipart/form-data">
+							<form action="../controllers/PostController.php" method="POST" enctype="multipart/form-data">
 								<!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
 								<div class="wizard-header">
 									<h3 class="wizard-title">
