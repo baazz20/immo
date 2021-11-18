@@ -10,7 +10,7 @@ Clonner le depot git, placer le dossier dans le repertoire www de votre server l
 ## Pour se connecter une après installation
 pour un utilisateur simple il lui sufira de creer un compte.
 ## Pour l'Administration
-| PSEUDO | CODE D'ELECTEUR |
+| PSEUDO | MOT DE PASSE |
 ---------|------------------
 |admin| admin |
 ## EN IMAGE:
